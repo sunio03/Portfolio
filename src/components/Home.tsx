@@ -1,23 +1,22 @@
-import { useState, useEffect } from "react"
 import { ChevronDownIcon } from "@heroicons/react/24/outline"
 import { motion } from "framer-motion"
 
 export default function Home() {
-  const [currentRole, setCurrentRole] = useState(0)
-  const roles = [
-    "Full Stack Developer",
-    "Software Engineer",
-    "React Developer",
-    "TypeScript Enthusiast",
-  ]
+  // const [currentRole, setCurrentRole] = useState(0)
+  // const roles = [
+  //   "Full Stack Developer",
+  //   "Software Engineer",
+  //   "React Developer",
+  //   "TypeScript Enthusiast",
+  // ]
 
   // Auto-rotate through roles
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentRole((prev) => (prev + 1) % roles.length)
-    }, 3000)
-    return () => clearInterval(interval)
-  }, [roles.length])
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentRole((prev) => (prev + 1) % roles.length)
+  //   }, 3000)
+  //   return () => clearInterval(interval)
+  // }, [roles.length])
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -54,14 +53,19 @@ export default function Home() {
           </h1>
 
           {/* Role */}
-          <div className="h-16 flex items-center justify-center">
+          {/* <div className="h-16 flex items-center justify-center">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-300 transition-all duration-500">
               <span className="text-[rgb(100,255,218)]">I'm a </span>
               <span className="inline-block min-w-[300px] text-left">
-                {roles[currentRole]}
+                Student
               </span>
             </h2>
-          </div>
+          </div> */}
+
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-300">
+            <span >I'm a </span>
+            <span className="text-[rgb(100,255,218)]">SKKU Student</span>
+          </h2>
         </motion.div>
 
         {/* Description */}
