@@ -1,5 +1,5 @@
-import NavBar from "./assets/components/NavBar"
-import Home from "./assets/components/Home"
+import NavBar from "./components/NavBar"
+import Home from "./components/Home"
 
 function App() {
 
