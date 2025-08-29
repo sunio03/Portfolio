@@ -19,17 +19,17 @@ function classNames(...classes: (string | false | null | undefined)[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Example() {
+export default function NavBar() {
   // Track active link (default: "Home")
   const [active, setActive] = useState<NavItem['name']>('Home')
 
   return (
     <Disclosure
       as="nav"
-      className="relative bg-gray-800/50 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10"
+      className="relative bg-[#0b192e]"
     >
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div className="relative flex h-16 items-center justify-between">
+        <div className="relative flex h-[40px] items-center justify-between">
           {/* --- Mobile menu button --- */}
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500">
@@ -49,7 +49,7 @@ export default function Example() {
           {/* --- Logo + Desktop links --- */}
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex shrink-0 items-center">
-              <div className="text-2xl font-extrabold text-[rgb(100,255,218)]">
+              <div className="text-[21px] font-extrabold text-[rgb(100,255,218)]">
                 Asuni Tarmizi
               </div>
             </div>
@@ -59,14 +59,9 @@ export default function Example() {
                   <a
                     key={item.name}
                     href={item.href}
-                    onClick={() => setActive(item.name)}
-                    aria-current={active === item.name ? 'page' : undefined}
-                    className={classNames(
-                      active === item.name
-                        ? 'bg-gray-950/50 text-white'
-                        : 'text-gray-300 hover:bg-white/5 hover:text-white',
-                      'rounded-md px-3 py-2 text-lg font-medium',
-                    )}
+                    className="relative text-white translate-y-0.5 text-lg font-medium 
+                    after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-white
+                    after:transition-all after:duration-300 hover:after:w-full"
                   >
                     {item.name}
                   </a>
