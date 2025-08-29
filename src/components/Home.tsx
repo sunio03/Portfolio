@@ -29,7 +29,7 @@ export default function Home() {
   return (
     <section
       id="home"
-      className="min-h-screen bg-[#0b192e] flex items-center justify-center relative overflow-hidden"
+      className="min-h-screen bg-[#0b192e] flex flex-col items-center justify-center relative overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 opacity-10">
@@ -37,7 +37,7 @@ export default function Home() {
         <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-400 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
         {/* Greeting */}
         <motion.div
           initial={{ opacity: 0, y: 100 }}
@@ -110,13 +110,34 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
           viewport={{ once: true }}
-          className="flex justify-center space-x-6 pt-8"
+          className="flex justify-center space-x-6 pt-12"
         >
-          {/* Your GitHub, LinkedIn, Email here */}
+          <a
+            href="https://github.com/yourgithub"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-[rgb(100,255,218)] transition-colors duration-300"
+          >
+            GitHub
+          </a>
+          <a
+            href="https://linkedin.com/in/yourlinkedin"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-[rgb(100,255,218)] transition-colors duration-300"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="mailto:youremail@example.com"
+            className="text-gray-400 hover:text-[rgb(100,255,218)] transition-colors duration-300"
+          >
+            Email
+          </a>
         </motion.div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        {/* Scroll indicator (moved lower so no overlap) */}
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce">
           <button
             onClick={() => scrollToSection("about")}
             className="text-gray-400 hover:text-[rgb(100,255,218)] transition-colors duration-300"
