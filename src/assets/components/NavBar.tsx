@@ -26,7 +26,7 @@ export default function NavBar() {
   return (
     <Disclosure
       as="nav"
-      className="relative bg-[#0b192e]"
+      className="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-md"
     >
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-[40px] items-center justify-between">
